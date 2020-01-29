@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-3"></div>
+      <div class="col-md-6">
+        <form name="form" #f="ngForm" novalidate class="feedback-form" (ngSubmit)="f.form.valid && login(f)">
+          <div class="form-group">
+            <label for="fname">Login Id / Email Id</label>
+            <input type="email" class="form-control" name="email"  #email ="ngModel"             
+                   placeholder="Enter Login Id / Email Id" [(ngModel)]="model.email" 
+                   [ngClass]="{'is-invalid': f.submitted && email.invalid}" required>
+                   <div class="invalid-feedback">
+                     <div>Email required</div>
+                   </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>       
+            <input type="password" #password = "ngModel"                  
+                   class="form-control" [ngClass]="{'is-invalid': f.submitted && password.invalid}"
+                   name="password"                  
+                   placeholder="Password" [(ngModel)]="model.password" required>
+                   <div class="invalid-feedback">
+                    <div>Password required</div>
+                  </div>
+          </div>
+          <div>
+           <button type="submit"  class="btn btn-primary" [disabled] = "email.invalid || password.invalid">Login </button> 
+          </div>
+        </form>
+        <p *ngIf="loginData" style="color: red; font-weight: bold">{{loginData}}</p>
+        <div class="loading-indicator" *ngIf="visible" >
+          <mat-progress-spinner mode="indeterminate" color="accent"></mat-progress-spinner>
+          </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,13 @@
+.profile{
+    border:double;
+    width: 40%;
+    float: left;
+}
+.updateProfile{
+    width: 60%;
+    border: double;
+    float: right;
+}
+.is-hidden{
+    display: none;
+}

@@ -1,0 +1,37 @@
+<div>
+<div class="profile">
+  <h2>Your Profile</h2>
+  <div *ngIf="responseData">
+    <table>
+      <tr><td><label>First Name : </label></td><td>{{responseData.firstName}}</td></tr>
+      <tr><td><label>Last Name : </label></td><td>{{responseData.lastName}}</td></tr>
+      <tr><td><label>Email : </label></td><td>{{responseData.email}}</td></tr>
+      <tr><td><label>Phone : </label></td><td>{{responseData.phoneNumber}}</td></tr>
+      <tr><td><label>Address : </label></td><td>{{responseData.address}}</td></tr>
+    </table>
+  </div>
+  <div>
+    <button class="btn btn-primary" (click)="displayDiv()" [ngClass]="{'is-hidden': editbuttonDisplay}">Edit Profile</button>
+  </div>
+  <div *ngIf="profileSuccess">
+    <div style="color: green"><b>Profile Updated Successfully.....!</b></div>
+    </div>
+</div>
+<div *ngIf="showJoinTodayDiv">
+    <form name="form" #f="ngForm" novalidate class="feedback-form" (ngSubmit)="updateProfile(f)">
+      <div class="updateProfile">
+        <table>
+         <tr><td><label>First Name : </label></td><td><input [(ngModel)]="responseData.firstName" name="firstName"></td></tr>
+         <tr><td><label>Last Name : </label></td><td><input [(ngModel)]="responseData.lastName" name="lastName"></td></tr>
+         <tr><td><label>Phone Number: </label></td><td><input [(ngModel)]="responseData.phoneNumber" name="phoneNumber"></td></tr>
+         <tr><td><label>Address: </label></td><td><textarea [(ngModel)]="responseData.address" name="address"></textarea></td></tr>
+        </table>
+<div>
+  <button class="btn btn-primary">Update Profile</button> <button class="btn btn-primary" (click)="cancelUpdate()">Cancel</button>
+</div>
+</div>
+</form>
+
+</div>
+
+</div>

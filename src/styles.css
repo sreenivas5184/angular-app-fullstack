@@ -1,0 +1,22 @@
+h1 {
+    color: blue;
+    font-size: 150%;
+    font-style: unset;
+  }
+.indexpage{
+    background-color: #00FF99;
+    height:40em; background-size:cover; width:auto;
+    background-image:url('101475.jpg');
+    background-position:50% 50%;
+      
+}
+.homebtn{
+    text-align: center;
+}
+.homeBtton{
+    text-align: right;
+    font-weight: 800;
+    padding-right: 12px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

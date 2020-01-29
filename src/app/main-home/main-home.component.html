@@ -1,0 +1,32 @@
+<marquee class="welcomeText">
+  Hi {{name}} Welcome to Sreenivas App....! You last log-in at {{lastLoginDate | date: 'MM-dd-yyyy hh:mm:ss'}}
+</marquee>
+<div class="icon-bar">
+  <a href="#" routerLink="/mainHome" class="active" title="Home"><i class="fa fa-home" data-toggle="tab"></i></a> 
+  <a href="#" routerLink="profile" title="Profile" data-toggle="tab"><i class="fa fa-user"></i></a> 
+  <a href="#" routerLink="education"><i class="fa fa-graduation-cap" title="Java Materials"></i></a> 
+  <a href="{{location}}" target="_blank" title="Search"><i class="fa fa-globe"></i></a>
+  <a href="home/login" ><i class="fa fa-sign-out" title="Sign-out"></i></a> 
+</div>
+<div *ngIf="route.children.length === 0">
+  <div class="quotes">
+    <ul>
+      <li>
+        I love those who can smile in trouble… Leonardo da Vinci
+      </li>
+      <li>
+        Go confidently in the direction of your dreams! Live the life you’ve imagined. Henry David Thoreau
+      </li>
+      <li>
+        Your time is limited, so don’t waste it living someone else’s life. Don’t be trapped by dogma, which is living with the results of other people’s thinking. Don’t let the noise of others’ opinions drown out your own inner voice. 
+        And most important, have the courage to follow your heart and intuition. Steve Jobs
+      </li>
+    </ul>
+  </div>
+  <div>
+    <angular-image-slider [images]="imagesUrl"></angular-image-slider>
+  </div>
+</div>
+<div class="childPages">
+<router-outlet></router-outlet>
+</div>
